@@ -24,8 +24,9 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
 
     private final BookRepository bookRepository;
+    private final AuthorRepository authorRepository;
+    private final GenreRepository genreRepository;
     private final EntityManager entityManager;
-
 
     @Override
     public Book create(Book book) {
@@ -100,6 +101,13 @@ public class BookServiceImpl implements BookService {
         if (book.getGenre() == null || book.getGenre().getId() == null) {
             throw new IllegalArgumentException("Book must have a valid genre ID");
         }
-        // We assume Author and Genre exist (validated at persistence time in DB constraints or pre-fetched in service)
+
+        // Check if Author exists
+        authorRepository.findById(book.getAuthor().getId())
+                .orElseThrow(() -> new EntityNotFoundException("Author not found with id: " + book.getAuthor().getId()));
+
+        // Check if Genre exists
+        genreRepository.findById(book.getGenre().getId())
+                .orElseThrow(() -> new EntityNotFoundException("Genre not found with id: " + book.getGenre().getId()));
     }
 }
