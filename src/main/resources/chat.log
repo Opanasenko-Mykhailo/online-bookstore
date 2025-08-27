@@ -1,0 +1,23 @@
+1. Generate a complete Spring Boot project with Maven for an Online Bookstore REST API using Spring Web, Spring Data JPA, Hibernate, MySQL, and Lombok.
+2. Provide Maven dependencies for Spring Boot, Spring Data JPA, Lombok, and MySQL connector in pom.xml. Create full pom.xml file.
+3. Write JPA entity classes for Book, Author, and Genre with specified fields and relationships.
+4. Create repository interfaces for BookRepository, AuthorRepository, and GenreRepository using Spring Data JPA.
+5. Generate service interfaces and implementations for BookService, AuthorService, and GenreService with CRUD operations.
+6. Add business logic in BookService to validate that a book must always have a valid author and genre when created.
+7. Write REST controllers for managing books, authors, and genres with CRUD endpoints.
+8. Add jakarta.validation to pom.xml.
+9. Add search endpoints in BookController for title, author, and genre.
+10. Return proper HTTP status codes (201 for created, 404 for not found, 400 for validation errors, 200 for success).
+11. handleMethodArgumentNotValid - Method does not override method from its superclass.
+12. Method does not override method from its superclass - likewise, nothing has changed, this method is not in the interface.
+13. Provide application.properties configuration for connecting to a local MySQL database named bookstore\_db with username ‘root’ and password ‘password’.
+14. Write unit tests for BookService using JUnit 5 and Mockito.
+15. Write integration tests for BookController using MockMvc to test CRUD and search endpoints.
+16. Ensure test coverage above 80%.
+17. Write tests for all classes that don't currently have them so that coverage is greater than 80%.
+18. Add Jacoco test coverage configuration in Maven.
+19. Add Checkstyle plugin configuration in Maven for code style checks.
+20. Generate a README.md file describing the Online Bookstore API, setup instructions (how to run with MySQL), and list all REST endpoints with example requests/responses. Create README.md file.
+21. Add a short feedback section in the README: ease of using AI, time spent, whether code worked immediately, what adjustments were needed, challenges, and useful prompts learned.
+22. Export all ChatGPT conversation logs into a file named chat.log.
+23. Write me all my requests.
